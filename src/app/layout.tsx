@@ -1,8 +1,12 @@
 // src/app/layout.tsx
-import React from 'react';
-import './globals.css'; // Importe seu arquivo de estilos globais, se houver
+import React, { ReactNode } from 'react';
+import '../styles/globals.css'; // Caminho ajustado para o CSS global
 
-const RootLayout: React.FC = ({ children }: React.PropsWithChildren<{}>) => {
+interface RootLayoutProps {
+  children: ReactNode;
+}
+
+const RootLayout: React.FC<RootLayoutProps> = ({ children }) => {
   return (
     <html lang="en">
       <head>
@@ -15,6 +19,6 @@ const RootLayout: React.FC = ({ children }: React.PropsWithChildren<{}>) => {
       </body>
     </html>
   );
-}
+};
 
 export default RootLayout;
